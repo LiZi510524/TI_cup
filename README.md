@@ -39,10 +39,10 @@
 
 **程控部分代码：**
 ```c
-adcx=Get_Adc_Average(ADC_CHANNEL_1,10);                   //得到ADC_D转换值                       
-temp=(float)adcx*(3.3/4096);			                        //得到ADC电压值
-V_adc=temp;                    										             //赋值给V_adc          
-V_dac=(int)((1.53+0.5*log10(V_adc))/3.3 * 4096.0);					        //通过函数拟合得到V_dac的值
+adcx=Get_Adc_Average(ADC_CHANNEL_1,10);               //得到ADC_D转换值                       
+temp=(float)adcx*(3.3/4096);			                    //得到ADC电压值
+V_adc=temp;                    										   //赋值给V_adc          
+V_dac=(int)((1.53+0.5*log10(V_adc))/3.3 * 4096.0);					  //通过函数拟合得到V_dac的值
 HAL_DAC_SetValue(&DAC1_Handler,DAC_CHANNEL_1,DAC_ALIGN_12B_R,V_dac);//设置DAC输出值
 ```
 
